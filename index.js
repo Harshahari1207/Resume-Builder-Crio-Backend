@@ -6,16 +6,16 @@ const config = require("./src/config/config");
 let server;
 
 mongoose
-  .connect(`${config.mongoose.url}`, {
+  .connect(`mongodb+srv://ResumeBuild:ResumeBuildCrio@resumebuilder.qrgdtig.mongodb.net/?retryWrites=true&w=majority&appName=ResumeBuilder`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connection to server successfull: ", config.mongoose.url);
+    console.log("Connection to server successfull: ");
   })
   .catch((e) => {
-    console.log("Error while connection ", e, config.mongoose);
+    console.log("Error while connection ", e);
   });
-app.listen(config.port, () => {
-  console.log("Listening on port", config.port);
+app.listen(8082, () => {
+  console.log("Listening on port");
 });
